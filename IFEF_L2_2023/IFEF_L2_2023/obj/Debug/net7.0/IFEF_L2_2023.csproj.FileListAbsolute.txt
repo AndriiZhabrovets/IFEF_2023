@@ -1,0 +1,15 @@
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/bin/Debug/net7.0/IFEF_L2_2023
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/bin/Debug/net7.0/IFEF_L2_2023.deps.json
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/bin/Debug/net7.0/IFEF_L2_2023.runtimeconfig.json
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/bin/Debug/net7.0/IFEF_L2_2023.dll
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/bin/Debug/net7.0/IFEF_L2_2023.pdb
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.csproj.AssemblyReference.cache
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.AssemblyInfoInputs.cache
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.AssemblyInfo.cs
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.csproj.CoreCompileInputs.cache
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.dll
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/refint/IFEF_L2_2023.dll
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.pdb
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/IFEF_L2_2023.genruntimeconfig.cache
+/Users/andreyzhabrovets/Projects/IFEF_L2_2023/IFEF_L2_2023/obj/Debug/net7.0/ref/IFEF_L2_2023.dll
