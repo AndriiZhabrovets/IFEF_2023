@@ -135,8 +135,11 @@ while (true)
             QAnswer = Convert.ToInt32(Console.ReadLine());
         } catch
         {
-            Console.WriteLine("Wrong Input! Restart required");
+            Console.WriteLine("Wrong Input!");
             i -= 1;
+            Console.WriteLine("\nPress any key to continue:");
+            Console.ReadKey();
+            Console.Clear();
             continue;
         }
         int RAnswer;
@@ -195,7 +198,12 @@ while (true)
                 Console.Clear();
                 Lifes -= 1;
                 Console.WriteLine("\n-1 Life");
-                Console.WriteLine("\nLifes Left: {0}\n", Lifes);
+                Console.WriteLine("\nLifes left: {0}\n", Lifes);
+
+                Console.WriteLine("\nPress any key to continue:");
+                Console.ReadKey();
+
+                Console.Clear();
 
                 continue;
             }

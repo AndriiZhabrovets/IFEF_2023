@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreyzhabrovets/Projects/IFEF_L1_2023/IFEF_L1_2023/IFEF_L1_2023.csproj",
+      "projectUniqueName": "/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_L1_2023/IFEF_L1_2023/IFEF_L1_2023.csproj",
       "projectName": "IFEF_L1_2023",
-      "projectPath": "/Users/andreyzhabrovets/Projects/IFEF_L1_2023/IFEF_L1_2023/IFEF_L1_2023.csproj",
+      "projectPath": "/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_L1_2023/IFEF_L1_2023/IFEF_L1_2023.csproj",
       "packagesPath": "/Users/andreyzhabrovets/.nuget/packages/",
-      "outputPath": "/Users/andreyzhabrovets/Projects/IFEF_L1_2023/IFEF_L1_2023/obj/",
+      "outputPath": "/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_L1_2023/IFEF_L1_2023/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/andreyzhabrovets/.nuget/NuGet/NuGet.Config"
