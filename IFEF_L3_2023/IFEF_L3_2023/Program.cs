@@ -113,13 +113,9 @@
 
 //if (PrimeChecker(number) == true)
 //{
-//    for (int i = 0; i <= number; i++)
+//    for (int i = 2; i <= number; i++)
 //    {
-//        if (i == 0)
-//        {
-//            Console.WriteLine(0);
-//        }
-//        else if (PrimeChecker(i) == true)
+//        if (PrimeChecker(i) == true)
 //        {
 //            Console.WriteLine(i);
 //        }
