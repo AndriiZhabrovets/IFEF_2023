@@ -4,10 +4,15 @@
 
 
 
+//Console.WriteLine("How many number in the Fibonacci Squence would you like to claculate?");
 
-//List<int> FibonacciList = new List<int>() {1,2,3,5,8,13,21};
+//int FibCount = Convert.ToInt32(Console.ReadLine());
 
-//for (int i = 0; i <= 10; i++)
+//Console.Clear();
+
+//List<int> FibonacciList = new List<int>() {1, 2};
+
+//for (int i = 0; i < FibCount-2; i++)
 //{
 //    int NextElement = FibonacciList[FibonacciList.Count - 1] + FibonacciList[FibonacciList.Count - 2];
 //    FibonacciList.Add(NextElement);
