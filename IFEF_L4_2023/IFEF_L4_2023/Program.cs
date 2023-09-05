@@ -10,15 +10,16 @@ int EvenCounter = 0;
 int SquareCounter = 0;
 
 
-for (int i = 0; NatCounter < 20 && EvenCounter < 20 && SquareCounter < 20; i++)
+for (int i = 0; NatCounter < 20 || EvenCounter < 20 || SquareCounter < 20; i++)
 {
+    Console.WriteLine("Looking at: {0}", i);
     if (Convert.ToString(i.GetType()) == "System.Int32" && i > 0 && NatCounter < 20)
     {
         NatNumbers[NatCounter] = i;
         NatCounter++;
     }
 
-    if (i % 2 == 0 && EvenCounter < 20 && i != 0)
+    if (i % 2 == 0 && i != 0)
     {
         EvenNumbers[EvenCounter] = i;
         EvenCounter++;
