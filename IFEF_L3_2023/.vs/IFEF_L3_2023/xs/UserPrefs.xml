@@ -1,4 +1,14 @@
 ﻿<Properties StartupConfiguration="{4B6F440B-9A06-4F14-B1F2-D4D4E99685E1}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.IFEF__L3__2023 FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IFEF_L3_2023/Program.cs">
+    <Files>
+      <File FileName="IFEF_L3_2023/Program.cs" Line="150" Column="52" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.IFEF__L3__2023 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
