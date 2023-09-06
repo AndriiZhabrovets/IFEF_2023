@@ -1,58 +1,58 @@
 ﻿// Task F1
 
 
-int[] NatNumbers = new int[20];
-int[] EvenNumbers = new int[20];
-int[] SquareNumbers = new int[20];
+//int[] NatNumbers = new int[20];
+//int[] EvenNumbers = new int[20];
+//int[] SquareNumbers = new int[20];
 
-int NatCounter = 0;
-int EvenCounter = 0;
-int SquareCounter = 0;
-
-
-for (int i = 0; NatCounter < 20 || EvenCounter < 20 || SquareCounter < 20; i++)
-{
-    Console.WriteLine("Looking at: {0}", i);
-    if (Convert.ToString(i.GetType()) == "System.Int32" && i > 0 && NatCounter < 20)
-    {
-        NatNumbers[NatCounter] = i;
-        NatCounter++;
-    }
-
-    if (i % 2 == 0 && i != 0)
-    {
-        EvenNumbers[EvenCounter] = i;
-        EvenCounter++;
-    }
-    if (i != 0 && SquareCounter < 20)
-    {
-        SquareNumbers[SquareCounter] = i * i;
-        SquareCounter++;
-    }
+//int NatCounter = 0;
+//int EvenCounter = 0;
+//int SquareCounter = 0;
 
 
-}
+//for (int i = 0; NatCounter < 20 || EvenCounter < 20 || SquareCounter < 20; i++)
+//{
+//    Console.WriteLine("Looking at: {0}", i);
+//    if (Convert.ToString(i.GetType()) == "System.Int32" && i > 0 && NatCounter < 20)
+//    {
+//        NatNumbers[NatCounter] = i;
+//        NatCounter++;
+//    }
 
-Console.WriteLine("Natural:");
-ArrayPrinter(NatNumbers);
-Console.WriteLine("Even:");
-ArrayPrinter(EvenNumbers);
-Console.WriteLine("Square:");
-ArrayPrinter(SquareNumbers);
+//    if (i % 2 == 0 && i != 0)
+//    {
+//        EvenNumbers[EvenCounter] = i;
+//        EvenCounter++;
+//    }
+//    if (i != 0 && SquareCounter < 20)
+//    {
+//        SquareNumbers[SquareCounter] = i * i;
+//        SquareCounter++;
+//    }
+
+
+//}
+
+//Console.WriteLine("Natural:");
+//ArrayPrinter(NatNumbers);
+//Console.WriteLine("Even:");
+//ArrayPrinter(EvenNumbers);
+//Console.WriteLine("Square:");
+//ArrayPrinter(SquareNumbers);
 
 
 
 
-static void ArrayPrinter(int[] ArrayToPrint)
-{
-    for (int i = 0; i < ArrayToPrint.Length; i++)
-    {
-        if (ArrayToPrint[i] != 0)
-        {
-            Console.WriteLine(ArrayToPrint[i]);
-        }
-    }
-}
+//static void ArrayPrinter(int[] ArrayToPrint)
+//{
+//    for (int i = 0; i < ArrayToPrint.Length; i++)
+//    {
+//        if (ArrayToPrint[i] != 0)
+//        {
+//            Console.WriteLine(ArrayToPrint[i]);
+//        }
+//    }
+//}
 
 
 // Task F2
