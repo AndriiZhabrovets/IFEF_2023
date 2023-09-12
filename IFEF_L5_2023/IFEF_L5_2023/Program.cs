@@ -174,23 +174,25 @@ static string[] MySplit (string StringToSplit, string CharToSplitWith)
     //Console.WriteLine(NumberOfSplits);
     string[] ResArray = new string[NumberOfSplits+1];
     int[] SplitPositions = PositionsOfChar(StringToSplit, CharToSplitWith);
-
+    int FromIndex = 0;
+    int ToIndex;
     //IntArrayPrinter(SplitPositions);
     //Console.WriteLine(StringToSplit[SplitPositions[1]]);
     for(int i = 0; i <= NumberOfSplits; i++)
     {
         //Console.WriteLine("i = " + i);
-        if (i == 0)
+        if (i == NumberOfSplits)
         {
-            ResArray[i] = StringToSplit.Substring(0, SplitPositions[i]);
-        }
-        else if (i == NumberOfSplits){
-            ResArray[i] = StringToSplit.Substring(SplitPositions[i-1]+1, MyLength(StringToSplit) - SplitPositions[i - 1]-1);
+            ToIndex = MyLength(StringToSplit);
         }
         else
         {
-            ResArray[i] = StringToSplit.Substring(SplitPositions[i-1]+1, MyLength(StringToSplit) - SplitPositions[i]-2);
+            ToIndex = SplitPositions[i];
         }
+        ResArray[i] = StringToSplit.Substring(FromIndex, ToIndex - FromIndex);
+
+        FromIndex = ToIndex + MyLength(CharToSplitWith);
+
 
         //Console.WriteLine(ResArray[i]);
     }
@@ -206,4 +208,5 @@ static void StrArrayPrinter(string[] ArrayToPrint)
     }
 }
 
-StrArrayPrinter(MySplit("A/sentence/into/words", "/"));
+StrArrayPrinter(MySplit("A sentence into words", " "));
+
