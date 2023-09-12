@@ -104,3 +104,106 @@
 //}
 
 
+// Task G4
+
+static int MyLength(string ToCheck)
+{
+    int Length = ToCheck.LastIndexOf(ToCheck.ToArray().Last()) + 1;
+    return Length;
+}
+
+//Console.WriteLine(MyLength("Hello"));
+
+
+
+
+static int NumberOfChar(string StringToCheck, string CharToCount)
+{
+    int CharCounter = 0;
+
+    for (int i=0; i <= MyLength(StringToCheck)-1; i++)
+    {
+        if (StringToCheck[i].ToString() == CharToCount)
+        {
+            CharCounter++;
+        }
+    }
+    return CharCounter;
+}
+
+//Console.WriteLine(NumberOfChar("Pizza", "z"));
+
+
+
+
+
+static int[] PositionsOfChar(string StringToCheck, string CharToCount)
+{
+    int[] CharPositions = new int[NumberOfChar(StringToCheck, CharToCount)];
+    int CharCounter = 0;
+    for (int i = 0; i <= MyLength(StringToCheck) - 1; i++)
+    {
+        if (StringToCheck[i].ToString() == CharToCount)
+        {
+            CharPositions[CharCounter] = i;
+            CharCounter++;
+        }
+    }
+    return CharPositions;
+}
+
+
+
+
+static void IntArrayPrinter(int[] ArrayToPrint)
+{
+    for (int i = 0; i < ArrayToPrint.Length; i++)
+    {
+        Console.WriteLine(ArrayToPrint[i]);
+    }
+}
+
+
+
+//IntArrayPrinter(PositionsOfChar("basketball", "b"));
+
+
+static string[] MySplit (string StringToSplit, string CharToSplitWith)
+{
+    int NumberOfSplits = NumberOfChar(StringToSplit, CharToSplitWith);
+    //Console.WriteLine(NumberOfSplits);
+    string[] ResArray = new string[NumberOfSplits+1];
+    int[] SplitPositions = PositionsOfChar(StringToSplit, CharToSplitWith);
+
+    //IntArrayPrinter(SplitPositions);
+    //Console.WriteLine(StringToSplit[SplitPositions[1]]);
+    for(int i = 0; i <= NumberOfSplits; i++)
+    {
+        //Console.WriteLine("i = " + i);
+        if (i == 0)
+        {
+            ResArray[i] = StringToSplit.Substring(0, SplitPositions[i]);
+        }
+        else if (i == NumberOfSplits){
+            ResArray[i] = StringToSplit.Substring(SplitPositions[i-1]+1, MyLength(StringToSplit) - SplitPositions[i - 1]-1);
+        }
+        else
+        {
+            ResArray[i] = StringToSplit.Substring(SplitPositions[i-1]+1, MyLength(StringToSplit) - SplitPositions[i]-2);
+        }
+
+        //Console.WriteLine(ResArray[i]);
+    }
+    
+    return ResArray;
+}
+
+static void StrArrayPrinter(string[] ArrayToPrint)
+{
+    for (int i = 0; i < ArrayToPrint.Length; i++)
+    {
+        Console.WriteLine(ArrayToPrint[i]);
+    }
+}
+
+StrArrayPrinter(MySplit("A/sentence/into/words", "/"));
