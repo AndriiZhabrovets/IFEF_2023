@@ -108,7 +108,6 @@
 
 static int MyLength(string ToCheck)
 {
-    int Counter = 0;
     
     for(int i=0; ;i++) { 
         try
@@ -117,7 +116,7 @@ static int MyLength(string ToCheck)
         }
         catch
         {
-            return Counter;
+            return i;
         }
 
     }
@@ -143,7 +142,7 @@ static int NumberOfChar(string StringToCheck, char CharToCount)
     return CharCounter;
 }
 
-//Console.WriteLine(NumberOfChar("Pizza", "z"));
+//Console.WriteLine(NumberOfChar("Pizza", 'z'));
 
 
 
@@ -177,7 +176,7 @@ static void IntArrayPrinter(int[] ArrayToPrint)
 
 
 
-//IntArrayPrinter(PositionsOfChar("basketball", "b"));
+//IntArrayPrinter(PositionsOfChar("basketball", 'b'));
 
 
 static string[] MySplit(string StringToSplit, char CharToSplitWith)
@@ -203,7 +202,7 @@ static string[] MySplit(string StringToSplit, char CharToSplitWith)
         }
         ResArray[i] = StringToSplit.Substring(FromIndex, ToIndex - FromIndex);
 
-        FromIndex = ToIndex + MyLength(CharToSplitWith);
+        FromIndex = ToIndex + 1;
 
 
         //Console.WriteLine(ResArray[i]);
@@ -211,6 +210,8 @@ static string[] MySplit(string StringToSplit, char CharToSplitWith)
 
     return ResArray;
 }
+
+
 
 static void StrArrayPrinter(string[] ArrayToPrint)
 {
@@ -220,5 +221,5 @@ static void StrArrayPrinter(string[] ArrayToPrint)
     }
 }
 
-StrArrayPrinter(MySplit("A sentence into words", " "));
+StrArrayPrinter(MySplit("A sentence into words", ' '));
 
