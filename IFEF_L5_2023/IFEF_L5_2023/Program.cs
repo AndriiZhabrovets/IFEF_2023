@@ -108,8 +108,20 @@
 
 static int MyLength(string ToCheck)
 {
-    int Length = ToCheck.LastIndexOf(ToCheck.ToArray().Last()) + 1;
-    return Length;
+    int Counter = 0;
+    
+    for(int i=0; ;i++) { 
+        try
+        {
+            char Check = ToCheck[i];
+        }
+        catch
+        {
+            return Counter;
+        }
+
+    }
+    
 }
 
 //Console.WriteLine(MyLength("Hello"));
@@ -117,13 +129,13 @@ static int MyLength(string ToCheck)
 
 
 
-static int NumberOfChar(string StringToCheck, string CharToCount)
+static int NumberOfChar(string StringToCheck, char CharToCount)
 {
     int CharCounter = 0;
 
-    for (int i=0; i <= MyLength(StringToCheck)-1; i++)
+    for (int i = 0; i <= MyLength(StringToCheck) - 1; i++)
     {
-        if (StringToCheck[i].ToString() == CharToCount)
+        if (StringToCheck[i] == CharToCount)
         {
             CharCounter++;
         }
@@ -137,13 +149,13 @@ static int NumberOfChar(string StringToCheck, string CharToCount)
 
 
 
-static int[] PositionsOfChar(string StringToCheck, string CharToCount)
+static int[] PositionsOfChar(string StringToCheck, char CharToCount)
 {
     int[] CharPositions = new int[NumberOfChar(StringToCheck, CharToCount)];
     int CharCounter = 0;
     for (int i = 0; i <= MyLength(StringToCheck) - 1; i++)
     {
-        if (StringToCheck[i].ToString() == CharToCount)
+        if (StringToCheck[i] == CharToCount)
         {
             CharPositions[CharCounter] = i;
             CharCounter++;
@@ -168,17 +180,17 @@ static void IntArrayPrinter(int[] ArrayToPrint)
 //IntArrayPrinter(PositionsOfChar("basketball", "b"));
 
 
-static string[] MySplit (string StringToSplit, string CharToSplitWith)
+static string[] MySplit(string StringToSplit, char CharToSplitWith)
 {
     int NumberOfSplits = NumberOfChar(StringToSplit, CharToSplitWith);
     //Console.WriteLine(NumberOfSplits);
-    string[] ResArray = new string[NumberOfSplits+1];
+    string[] ResArray = new string[NumberOfSplits + 1];
     int[] SplitPositions = PositionsOfChar(StringToSplit, CharToSplitWith);
     int FromIndex = 0;
     int ToIndex;
     //IntArrayPrinter(SplitPositions);
     //Console.WriteLine(StringToSplit[SplitPositions[1]]);
-    for(int i = 0; i <= NumberOfSplits; i++)
+    for (int i = 0; i <= NumberOfSplits; i++)
     {
         //Console.WriteLine("i = " + i);
         if (i == NumberOfSplits)
@@ -196,7 +208,7 @@ static string[] MySplit (string StringToSplit, string CharToSplitWith)
 
         //Console.WriteLine(ResArray[i]);
     }
-    
+
     return ResArray;
 }
 
