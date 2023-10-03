@@ -135,7 +135,7 @@ class Program
     {
         Console.Clear();
         string Hangman = "";
-        string EncodedWord = string.Join("", WordEncoder(SecretWord));
+        string EncodedWord = CharArrayPrinter(WordEncoder(SecretWord));
 
         if (AmountLives == 6)
         {
@@ -352,12 +352,12 @@ class Program
         Used letters: {2}
 
         Used letters:
-        """, AmountLives, EncodedWord, string.Join("", WordEncoder(UsedLetters))
+        """, AmountLives, EncodedWord, CharArrayPrinter(UsedLetters)
 
         );
 
         Console.WriteLine(Hangman);
-        Console.WriteLine(EncodedWord);
+        Console.WriteLine(EncodedWord + "\n\n");
 
     }
 
