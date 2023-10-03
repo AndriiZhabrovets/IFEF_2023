@@ -1,0 +1,15 @@
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/bin/Debug/net7.0/IFEF_2023_HangMan_Project
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/bin/Debug/net7.0/IFEF_2023_HangMan_Project.deps.json
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/bin/Debug/net7.0/IFEF_2023_HangMan_Project.runtimeconfig.json
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/bin/Debug/net7.0/IFEF_2023_HangMan_Project.dll
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/bin/Debug/net7.0/IFEF_2023_HangMan_Project.pdb
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.csproj.AssemblyReference.cache
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.AssemblyInfoInputs.cache
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.AssemblyInfo.cs
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.csproj.CoreCompileInputs.cache
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.dll
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/refint/IFEF_2023_HangMan_Project.dll
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.pdb
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/IFEF_2023_HangMan_Project.genruntimeconfig.cache
+/Users/andreyzhabrovets/Documents/GitHub/New/IFEF_2023/IFEF_2023_HangMan_Project/IFEF_2023_HangMan_Project/obj/Debug/net7.0/ref/IFEF_2023_HangMan_Project.dll
