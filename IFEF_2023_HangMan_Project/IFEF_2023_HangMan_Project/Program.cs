@@ -33,6 +33,8 @@ class Program
             Console.WriteLine("Game Over!");
             if (QuitOrRestart()=='Q')
             {
+                Console.Clear();
+                Console.WriteLine("Goodbye!");
                 break;
             } // Ask if want to quit or start new game
         }
