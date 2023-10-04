@@ -7,6 +7,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        while (true)
+        {
 
             int Lives = 6;
             char[] UsedLetters = new char[] { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
@@ -14,27 +16,33 @@ class Program
             string SecretWord = ReadSecretWord();
             char[] EncodedWord = WordEncoder(SecretWord.ToArray());
             bool EndGame = false;
-        //ArrayPrinter(SecretWord);
-        // Player 1: Enter the secret word to be guessed by player 2
-        HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);                // Screen output for a good start
-        while (true)                 // Player 2: Make your guesses
-        {
-            char Guess = ReadOneChar(UsedLetters);           // Handle input of one char.
-            Console.WriteLine("Your guess: {0}", Guess);
-            EvaluateTheSituation(Guess, SecretWord.ToArray(), ref Lives, ref UsedLetters, Alphabet, ref EncodedWord, ref EndGame); // Game Logic goes here
-            HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);// Screen output goes here
-            if (EndGame)
+            //ArrayPrinter(SecretWord);
+            // Player 1: Enter the secret word to be guessed by player 2
+            HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);                // Screen output for a good start
+            while (true)                 // Player 2: Make your guesses
+            {
+                char Guess = ReadOneChar(UsedLetters);           // Handle input of one char.
+                Console.WriteLine("Your guess: {0}", Guess);
+                EvaluateTheSituation(Guess, SecretWord.ToArray(), ref Lives, ref UsedLetters, Alphabet, ref EncodedWord, ref EndGame); // Game Logic goes here
+                HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);// Screen output goes here
+                if (EndGame)
+                {
+                    break;
+                }
+            }
+            Console.WriteLine("Game Over!");
+            if (QuitOrRestart()=='Q')
             {
                 break;
-            }
+            } // Ask if want to quit or start new game
         }
-        Console.WriteLine("Game Over!");
-        //QuitOrRestart(); // Ask if want to quit or start new game
+
     }
 
 
     static string ReadSecretWord()
     {
+        Console.Clear();
         string SecretWord = "";
         char[] WhiteList = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         bool Error = true;
@@ -150,11 +158,33 @@ class Program
 
     }
 
-    static void QuitOrRestart() // Modification of method declaration recommended: Add return value and parameters
+    static char QuitOrRestart() // Modification of method declaration recommended: Add return value and parameters
                                 // If there are rules and constraints on allowed secrets (e.g. no digits), check them in here
     {
-        // Variable declarations allowed here
-        // Console.Write() etc. allowed here!
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("Would you like to restart or quite the game (R or Q)?");
+            string RestartInput = Console.ReadLine().ToUpper();
+            try
+            {
+                char CharToCheck = Convert.ToChar(RestartInput);
+                if (CharToCheck == 'R' || CharToCheck == 'Q')
+                {
+                    return CharToCheck;
+                }
+                Console.Clear();
+                continue;
+
+            }
+            catch
+            {
+                Console.Clear();
+                continue;
+            }
+        }
+
+        
     }
 
     static void HangTheMan(int AmountLives, char[] SecretWord, char[] UsedLetters, char[] EncodedWord) // Modification of method declaration recommended: Add return value and parameters
