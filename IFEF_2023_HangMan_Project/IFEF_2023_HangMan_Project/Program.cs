@@ -70,7 +70,7 @@ class Program
 
         }
 
-        //char[] SecretArray = SecretWord.ToCharArray();
+       
 
         return SecretWord;
 
