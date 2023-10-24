@@ -1,4 +1,5 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace IFEF_2023_HangMan_Project;
 
@@ -33,7 +34,6 @@ class Program
             Console.WriteLine("Game Over!");
             if (QuitOrRestart()=='Q')
             {
-                Console.Clear();
                 Console.WriteLine("Goodbye!");
                 break;
             } // Ask if want to quit or start new game
@@ -45,6 +45,8 @@ class Program
     static string ReadSecretWord()
     {
         Console.Clear();
+        string IntroMessage = "\n██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗\n██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║\n███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║\n██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║\n██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║\n╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝\n                                                                \n";
+        Console.Write(IntroMessage);
         string SecretWord = "";
         char[] WhiteList = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         bool Error = true;
@@ -86,14 +88,15 @@ class Program
             try
             {
                 char CharToCheck = Convert.ToChar(UserInput);
-                if (WhiteList.Contains(CharToCheck)|| UsedLetters.Contains(Convert.ToChar(UserInput)))
+                if (WhiteList.Contains(CharToCheck) && !UsedLetters.Contains(CharToCheck))
                 {
                     GuessLetter = CharToCheck;
                     break;
                 }
                 Console.Clear();
+                Console.WriteLine("Wrong Input!");
                 continue;
-                
+
             }
             catch
             {
@@ -133,6 +136,7 @@ class Program
                 }
                 if (!EncodedWord.Contains('_'))
                 {
+                    Console.WriteLine("You won!");
                     EndGame = true;
                 }
                 return 0;
@@ -141,9 +145,13 @@ class Program
                 //return response;
             }
         }
+        if (!UsedLetters.Contains(Guess)){
+            return 0;
+        }
         Lives = Lives - 1;
         if(Lives == 0)
         {
+            Console.WriteLine("You lost!");
             EndGame = true;
             EncodedWord = SecretWord;
 
@@ -158,7 +166,6 @@ class Program
     {
         while (true)
         {
-            Console.Clear();
             Console.WriteLine("Would you like to restart or quite the game (R or Q)?");
             string RestartInput = Console.ReadLine().ToUpper();
             try
