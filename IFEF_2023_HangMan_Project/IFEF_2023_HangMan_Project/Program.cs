@@ -83,17 +83,10 @@ class Program
         {
             Console.WriteLine("Enter you guess: ");
             string UserInput = Console.ReadLine().ToUpper();
-
-            if (UsedLetters.Contains(Convert.ToChar(UserInput)))
-            {
-                Console.Clear();
-                continue;
-            }
-
             try
             {
                 char CharToCheck = Convert.ToChar(UserInput);
-                if (WhiteList.Contains(CharToCheck))
+                if (WhiteList.Contains(CharToCheck)|| UsedLetters.Contains(Convert.ToChar(UserInput)))
                 {
                     GuessLetter = CharToCheck;
                     break;
@@ -104,7 +97,7 @@ class Program
             }
             catch
             {
-                Console.Clear();
+                Console.WriteLine("Wrong Input!");
                 continue;
             }
          
