@@ -32,9 +32,9 @@ class Program
                 }
             }
             Console.WriteLine("Game Over!");
-            if (QuitOrRestart()=='Q')
+            if (QuitOrRestart()=='q')
             {
-                Console.WriteLine("Goodbye!");
+                Console.Clear();
                 break;
             } // Ask if want to quit or start new game
         }
@@ -82,7 +82,7 @@ class Program
                     GuessLetter = CharToCheck;
                     break;
                 }
-                Console.Clear();
+            
                 Console.WriteLine("Wrong Input!");
                 continue;
             }
