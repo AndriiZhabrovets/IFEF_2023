@@ -72,7 +72,7 @@ class Program
         char GuessLetter;
         while (true)
         {
-            Console.WriteLine("Enter you guess: ");
+            Console.WriteLine("Enter your guess: ");
             string UserInput = Console.ReadLine().ToUpper();
             try
             {
@@ -92,7 +92,6 @@ class Program
                 continue;
             }         
         }
-        Console.WriteLine("Your guess: {0}", GuessLetter);
         return GuessLetter;
     }
 
