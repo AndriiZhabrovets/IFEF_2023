@@ -8,24 +8,24 @@ class Program
 {
     static void Main(string[] args)
     {
+        char[] Alphabet = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
         while (true)
         {
-
             int Lives = 6;
             char[] UsedLetters = new char[] { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
-            char[] Alphabet = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-            string SecretWord = ReadSecretWord();
+            
+            string SecretWord = ReadSecretWord(Alphabet);
             char[] EncodedWord = WordEncoder(SecretWord.ToArray());
             bool EndGame = false;
             //ArrayPrinter(SecretWord);
             // Player 1: Enter the secret word to be guessed by player 2
-            HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);                // Screen output for a good start
+            HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord, EndGame);                // Screen output for a good start
             while (true)                 // Player 2: Make your guesses
             {
-                char Guess = ReadOneChar(UsedLetters);           // Handle input of one char.
-                Console.WriteLine("Your guess: {0}", Guess);
+                char Guess = ReadOneChar(UsedLetters, Alphabet);           // Handle input of one char.
                 EvaluateTheSituation(Guess, SecretWord.ToArray(), ref Lives, ref UsedLetters, Alphabet, ref EncodedWord, ref EndGame); // Game Logic goes here
-                HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord);// Screen output goes here
+                HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord, EndGame);// Screen output goes here
                 if (EndGame)
                 {
                     break;
@@ -38,17 +38,15 @@ class Program
                 break;
             } // Ask if want to quit or start new game
         }
-
     }
 
 
-    static string ReadSecretWord()
+    static string ReadSecretWord(char[] WhiteList)
     {
         Console.Clear();
         string IntroMessage = "\n██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗\n██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║\n███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║\n██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║\n██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║\n╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝\n                                                                \n";
         Console.Write(IntroMessage);
         string SecretWord = "";
-        char[] WhiteList = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         bool Error = true;
         while (Error) {
             Console.WriteLine("Enter your secret word: ");
@@ -61,26 +59,17 @@ class Program
                     Console.WriteLine("Wrong Input");
                     Error = true;
                     break;
-
-
                 }
-
             }
             Console.Clear();
-
         }
-
-       
-
         return SecretWord;
-
     }
 
-    static char ReadOneChar(char[] UsedLetters) // Modification of method declaration recommended: Add return value and parameters
+    static char ReadOneChar(char[] UsedLetters, char[] WhiteList) // Modification of method declaration recommended: Add return value and parameters
                               // If there are rules and constraints on allowed secrets (e.g. no digits), make sure the input is allowed
     {
         char GuessLetter;
-        char[] WhiteList = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         while (true)
         {
             Console.WriteLine("Enter you guess: ");
@@ -96,18 +85,15 @@ class Program
                 Console.Clear();
                 Console.WriteLine("Wrong Input!");
                 continue;
-
             }
             catch
             {
                 Console.WriteLine("Wrong Input!");
                 continue;
-            }
-         
+            }         
         }
-
+        Console.WriteLine("Your guess: {0}", GuessLetter);
         return GuessLetter;
-
     }
 
     static int EvaluateTheSituation(char Guess, char[] SecretWord, ref int Lives, ref char[] UsedLetters, char[] Alphabet, ref char[] EncodedWord, ref bool EndGame) // Modification of method declaration recommended: Add return value and parameters
@@ -124,41 +110,27 @@ class Program
 
         for (int i = 0; i < SecretWord.Length; i++)
         {
-        //    Console.WriteLine("Looking at: {0}, comparing to {1}", SecretWord[i], Guess);
+            Console.WriteLine(SecretWord[i]);
             if (SecretWord[i] == Guess)
             {
                 Hit = true;
-                CorrectIndexes = CountAllElements(SecretWord, Guess).ToArray();
-                for (int k = 0; k < AmountOfCorrect; k++)
-                {
-                    EncodedWord[CorrectIndexes[k]] = SecretWord[CorrectIndexes[k]];
-                    
-                }
-                if (!EncodedWord.Contains('_'))
-                {
-                    Console.WriteLine("You won!");
-                    EndGame = true;
-                }
-                return 0;
-
-                //string response = "Hit! There are "+ SecretWord.Count(c => c == Guess) +" "+Guess+"s in the secret word";
-                //return response;
+                EncodedWord[i] = SecretWord[i];
             }
         }
-        if (!UsedLetters.Contains(Guess)){
+        if (!EncodedWord.Contains('_'))
+        {
+            EndGame = true;
+        }
+        if (Hit){
             return 0;
         }
         Lives = Lives - 1;
         if(Lives == 0)
         {
-            Console.WriteLine("You lost!");
             EndGame = true;
             EncodedWord = SecretWord;
-
         }
         return 0;
-
-
     }
 
     static char QuitOrRestart() // Modification of method declaration recommended: Add return value and parameters
@@ -167,29 +139,17 @@ class Program
         while (true)
         {
             Console.WriteLine("Would you like to restart or quite the game (R or Q)?");
-            string RestartInput = Console.ReadLine().ToUpper();
-            try
-            {
-                char CharToCheck = Convert.ToChar(RestartInput);
-                if (CharToCheck == 'R' || CharToCheck == 'Q')
-                {
-                    return CharToCheck;
-                }
-                Console.Clear();
-                continue;
-
-            }
-            catch
-            {
-                Console.Clear();
-                continue;
-            }
-        }
-
-        
+            char RestartInput = Console.ReadKey().KeyChar;
+            if (RestartInput == 'r' || RestartInput == 'q')
+             {
+               return RestartInput;
+             }
+            Console.WriteLine(RestartInput);
+             continue;
+        }        
     }
 
-    static void HangTheMan(int AmountLives, char[] SecretWord, char[] UsedLetters, char[] EncodedWord) // Modification of method declaration recommended: Add return value and parameters
+    static void HangTheMan(int AmountLives, char[] SecretWord, char[] UsedLetters, char[] EncodedWord, bool GameOver) // Modification of method declaration recommended: Add return value and parameters
                              // In here, clear the screen and redraw everything reflecting the actual game status
     {
         Console.Clear();
@@ -416,6 +376,15 @@ class Program
 
         Console.WriteLine(Hangman + "\n\n");
         Console.WriteLine(CharArrayPrinter(EncodedWord) + "\n\n");
+
+        if(AmountLives == 0 && GameOver)
+        {
+            Console.WriteLine("You lost!");
+        }
+        else if(AmountLives != 0 && GameOver)
+        {
+            Console.WriteLine("You won!");
+        }
 
     }
 
