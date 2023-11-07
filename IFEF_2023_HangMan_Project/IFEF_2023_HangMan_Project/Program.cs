@@ -10,8 +10,11 @@ class Program
         while (true)
         {
             int Lives = 6;
-            char[] UsedLetters = new char[] { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
-
+            char[] UsedLetters = new char[Alphabet.Length];
+            for (int i = 0; i < Alphabet.Length; i++)
+            {
+                UsedLetters[i] = '_';
+            }
             string SecretWord = ReadSecretWord(Alphabet);
             char[] EncodedWord = WordEncoder(SecretWord.ToArray());
             bool EndGame = false;
