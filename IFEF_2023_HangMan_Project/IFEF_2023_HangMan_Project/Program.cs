@@ -370,13 +370,11 @@ class Program
 
         if (AmountLives == 0 && GameOver)
         {
-            Console.WriteLine("You lost!");
-            Console.WriteLine("Game Over!");
+            Console.WriteLine("You lost!\n");
         }
         else if (AmountLives != 0 && GameOver)
         {
-            Console.WriteLine("You won!");
-            Console.WriteLine("Game Over!");
+            Console.WriteLine("You won!\n");
         }
 
     }
