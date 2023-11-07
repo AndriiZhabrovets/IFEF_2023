@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace IFEF_2023_HangMan_Project;
+﻿namespace IFEF_2023_HangMan_Project;
 
 
 class Program
@@ -18,12 +15,12 @@ class Program
             string SecretWord = ReadSecretWord(Alphabet);
             char[] EncodedWord = WordEncoder(SecretWord.ToArray());
             bool EndGame = false;
-            HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord, EndGame);
+            HangTheMan(Lives, UsedLetters, EncodedWord, EndGame);
             while (true)
             {
                 char Guess = ReadOneChar(UsedLetters, Alphabet);
                 EvaluateTheSituation(Guess, SecretWord.ToArray(), ref Lives, ref UsedLetters, Alphabet, ref EncodedWord, ref EndGame);
-                HangTheMan(Lives, SecretWord.ToArray(), UsedLetters, EncodedWord, EndGame);
+                HangTheMan(Lives, UsedLetters, EncodedWord, EndGame);
                 if (EndGame)
                 {
                     break;
@@ -95,7 +92,6 @@ class Program
     static void EvaluateTheSituation(char Guess, char[] SecretWord, ref int Lives, ref char[] UsedLetters, char[] Alphabet, ref char[] EncodedWord, ref bool EndGame)
     {
         bool Hit = false;
-        int[] CorrectIndexes;
         int AmountOfCorrect = SecretWord.Count(x => x == Guess);
         int UsedIndex = Array.IndexOf(Alphabet, Guess);
 
@@ -141,7 +137,7 @@ class Program
         }
     }
 
-    static void HangTheMan(int AmountLives, char[] SecretWord, char[] UsedLetters, char[] EncodedWord, bool GameOver)
+    static void HangTheMan(int AmountLives, char[] UsedLetters, char[] EncodedWord, bool GameOver)
     {
         Console.Clear();
         string Hangman = "";
