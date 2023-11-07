@@ -70,10 +70,11 @@ class Program
         while (true)
         {
             Console.WriteLine("Enter your guess: ");
-            string UserInput = Console.ReadLine().ToUpper();
+            //string UserInput = Console.ReadLine().ToUpper();
+            char CharToCheck = Char.ToUpper(Console.ReadKey().KeyChar);
             try
             {
-                char CharToCheck = Convert.ToChar(UserInput);
+                //char CharToCheck = Convert.ToChar(UserInput);
                 if (WhiteList.Contains(CharToCheck) && !UsedLetters.Contains(CharToCheck))
                 {
                     GuessLetter = CharToCheck;
