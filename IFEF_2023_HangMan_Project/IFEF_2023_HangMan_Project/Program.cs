@@ -29,7 +29,6 @@ class Program
                     break;
                 }
             }
-            Console.WriteLine("Game Over!");
             if (QuitOrRestart() == 'q')
             {
                 Console.Clear();
@@ -372,10 +371,12 @@ class Program
         if (AmountLives == 0 && GameOver)
         {
             Console.WriteLine("You lost!");
+            Console.WriteLine("Game Over!");
         }
         else if (AmountLives != 0 && GameOver)
         {
             Console.WriteLine("You won!");
+            Console.WriteLine("Game Over!");
         }
 
     }
